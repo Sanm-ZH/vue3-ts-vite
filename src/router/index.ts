@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
+import HeaderPanelFixed from '../components/HeaderPanelFixed.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -16,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
       title: '待办事项',
       keepAlive: true
     }
+  },
+  {
+    path: '/header-panel-fixed',
+    name: 'HeaderPanelFixed',
+    component: HeaderPanelFixed
   }
 ]
 

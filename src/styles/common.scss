@@ -1,0 +1,33 @@
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.fixed {
+  position: sticky;
+}
+.top0 {
+  top: 0;
+}
+
+.width-100 {
+  width: 100%;
+}
+.width-max {
+  width: max-content;
+}
+
+.z-index9999 {
+  z-index: 9999;
+}
