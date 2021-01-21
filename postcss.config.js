@@ -1,5 +1,6 @@
-module.exports = {
-  plugins: {
+let plugins = {}
+if (process.env.NODE_ENV !== 'development') {
+  plugins = {
     autoprefixer: {
       overrideBrowserslist: [
         'Android 4.1',
@@ -12,4 +13,8 @@ module.exports = {
       grid: true
     }
   }
+}
+
+module.exports = {
+  plugins: plugins
 }

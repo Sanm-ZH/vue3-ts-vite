@@ -15,7 +15,7 @@ export default defineConfig({
     base: './'
   },
   esbuild: {
-    target: 'es2020'
+    target: 'es2019'
   },
   plugins: [vue(), vueJsx()],
   server: {
