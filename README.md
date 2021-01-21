@@ -1,4 +1,4 @@
-# test-vue3-demo
+# vue3-ts-vite
 
 ## Project description
 vue3 vite setup typescript
