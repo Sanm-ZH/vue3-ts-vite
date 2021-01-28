@@ -2,7 +2,8 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/todoList">Todo</router-link> |
-    <router-link to="/header-panel-fixed">HFixed</router-link>
+    <router-link to="/header-panel-fixed">HFixed</router-link> |
+    <router-link to="/text-transition">TextTransition</router-link>
   </div>
   <router-view v-slot="{ Component }">
     <component

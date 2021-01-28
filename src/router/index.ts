@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import HeaderPanelFixed from '../components/HeaderPanelFixed.vue'
+import TextTransition from '../views/TextTransition.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/header-panel-fixed',
     name: 'HeaderPanelFixed',
     component: HeaderPanelFixed
+  },
+  {
+    path: '/text-transition',
+    name: 'TextTransition',
+    component: TextTransition
   }
 ]
 
