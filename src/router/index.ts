@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } 
 import Home from '../views/Home.vue'
 import HeaderPanelFixed from '../components/HeaderPanelFixed.vue'
 import TextTransition from '../views/TextTransition.vue'
-import { log } from 'console'
+import Tabs from '../views/TabsC.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -37,6 +37,14 @@ const routes: Array<RouteRecordRaw> = [
     component: TextTransition,
     meta: {
       title: '文字逐字动画'
+    }
+  },
+  {
+    path: '/tabs',
+    name: 'Tabs',
+    component: Tabs,
+    meta: {
+      title: 'Tabs'
     }
   }
 ]
