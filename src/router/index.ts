@@ -2,12 +2,16 @@ import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } 
 import Home from '../views/Home.vue'
 import HeaderPanelFixed from '../components/HeaderPanelFixed.vue'
 import TextTransition from '../views/TextTransition.vue'
+import { log } from 'console'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: '首页'
+    }
   },
   {
     path: '/todoList',
@@ -22,12 +26,18 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/header-panel-fixed',
     name: 'HeaderPanelFixed',
-    component: HeaderPanelFixed
+    component: HeaderPanelFixed,
+    meta: {
+      title: '头部固定'
+    }
   },
   {
     path: '/text-transition',
     name: 'TextTransition',
-    component: TextTransition
+    component: TextTransition,
+    meta: {
+      title: '文字逐字动画'
+    }
   }
 ]
 
@@ -48,7 +58,9 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   // 可以对权限进行一些校验
-  // next() 不拦截
+  if (to.path !== from.path) {
+    document.title = `Vite App | ${to.meta.title}`
+  }
   next()
 })
 
