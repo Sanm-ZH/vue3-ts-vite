@@ -12,12 +12,20 @@
       </li>
     </ul>
   </div>
+  <div class="tabs-cont">
+    <label>Ex 2.</label>
+    <my-tabs></my-tabs>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import MyTabs from './tabs/MyTabs.vue'
 export default defineComponent({
   name: 'TabsC',
+  components: {
+    MyTabs
+  },
   setup() {
     const ex1List = [1, 2, 3, 4, 5]
     const activeIndex = ref(0)
