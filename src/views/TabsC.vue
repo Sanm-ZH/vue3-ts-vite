@@ -14,17 +14,25 @@
   </div>
   <div class="tabs-cont">
     <label>Ex 2.</label>
-    <my-tabs></my-tabs>
+    <my-tabs>
+      <my-tab-pane label="Home">Home</my-tab-pane>
+      <my-tab-pane label="Todo">Todo</my-tab-pane>
+      <my-tab-pane label="HFixed">HFixed</my-tab-pane>
+      <my-tab-pane label="TextTransition">TextTransition</my-tab-pane>
+      <my-tab-pane label="Tabs">Tabs</my-tab-pane>
+    </my-tabs>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import MyTabs from './tabs/MyTabs.vue'
+import MyTabPane from './tabs/MyTabPane.vue'
 export default defineComponent({
   name: 'TabsC',
   components: {
-    MyTabs
+    MyTabs,
+    MyTabPane
   },
   setup() {
     const ex1List = [1, 2, 3, 4, 5]
