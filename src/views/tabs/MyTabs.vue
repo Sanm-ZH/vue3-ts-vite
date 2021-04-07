@@ -2,10 +2,7 @@
   <div class="tabs">
     <div class="tabs-header">
       <div class="tabs-nav-wrap">
-        <div
-          class="tabs-nav"
-          @click="handleTabClick"
-        >
+        <div class="tabs-nav">
           <div
             class="tabs-active-bar"
             ref="tabsActiveBarRef"
@@ -58,8 +55,7 @@ export default defineComponent({
     }
 
     return {
-      tabsActiveBarRef,
-      handleTabClick
+      tabsActiveBarRef
     }
   }
 })
