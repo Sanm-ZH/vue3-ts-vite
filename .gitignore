@@ -2,6 +2,8 @@
 node_modules
 /dist
 .vscode
+.pnpm-lock.yaml
+.npm-lock.yaml
 
 
 # local env files

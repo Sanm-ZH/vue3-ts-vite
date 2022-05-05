@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/Home.vue'
-import HeaderPanelFixed from '../components/HeaderPanelFixed.vue'
-import TextTransition from '../views/TextTransition.vue'
-import Tabs from '../views/TabsC.vue'
+import Home from '@/views/Home.vue'
+import HeaderPanelFixed from '@/components/HeaderPanelFixed.vue'
+import TextTransition from '@/views/TextTransition.vue'
+import Tabs from '@/views/TabsC.vue'
+import Login from '@/views/login/Login.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -45,6 +46,14 @@ const routes: Array<RouteRecordRaw> = [
     component: Tabs,
     meta: {
       title: 'Tabs'
+    }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      title: 'Login'
     }
   }
 ]

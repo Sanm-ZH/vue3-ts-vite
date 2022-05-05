@@ -5,20 +5,20 @@ vue3 vite setup typescript
 基于vue3 vite 使用typescript vue setup的学习项目
 ## Project setup
 ```bash
-npm install
+pnpm install
 ```
 
 ### Compiles and hot-reloads for development
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ### Compiles and minifies for production
 ```bash
-npm run build
+pnpm run build
 ```
 
 ### Lints and fixes files
 ```bash
-npm run lint
+pnpm run lint
 ```

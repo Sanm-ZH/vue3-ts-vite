@@ -8,11 +8,17 @@ const resolve = (pathStr: string): string => {
 }
 
 export default defineConfig({
-  alias: {
-    '@': resolve('./src')
+  define: {
+    'process.env': process.env
   },
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
+  },
+  base: './',
   build: {
-    base: './'
+
   },
   esbuild: {
     target: 'es2019'
