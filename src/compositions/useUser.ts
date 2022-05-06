@@ -1,7 +1,8 @@
 import { computed, reactive, ref } from 'vue'
+import { loginModel, useUserProps } from '@/views/login/loginInterface'
 
-export const useUser = ():any => {
-  const loginModel = reactive({
+export const useUser = ():useUserProps => {
+  const loginForm:loginModel = reactive({
     username: '',
     password: ''
   })
@@ -9,11 +10,11 @@ export const useUser = ():any => {
   const user = ref()
 
   const login = async() => {
-    user.value = { id: 1, name: loginModel.username }
+    user.value = { id: 1, name: loginForm.username }
     console.log('登录成功')
   }
 
-  const loginedIn = computed(() => user.value?.id)
+  const loginedIn = computed(():boolean => user.value?.id)
 
   const logout = async() => {
     user.value = null
@@ -21,7 +22,7 @@ export const useUser = ():any => {
   }
 
   return {
-    loginModel,
+    loginForm,
     user,
     login,
     loginedIn,

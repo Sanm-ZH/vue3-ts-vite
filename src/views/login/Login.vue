@@ -2,11 +2,11 @@
   <div class="form-cont login-cont" v-if="!loginedIn">
     <div class="form-item">
       <label>用户名</label>
-      <input type="text" v-model="loginModel.username" placeholder="请输入用户名" />
+      <input type="text" v-model="loginForm.username" placeholder="请输入用户名" />
     </div>
     <div class="form-item">
       <label>密码</label>
-      <input type="password" v-model="loginModel.password" placeholder="请输入密码" />
+      <input type="password" v-model="loginForm.password" placeholder="请输入密码" />
     </div>
     <div class="form-item">
       <a class="login-btn margin-left-18" @click.prevent="login">登录</a>
@@ -21,7 +21,8 @@
 <script setup lang="ts">
 import { useUser } from '@/compositions/useUser'
 
-const { loginModel, user, logout, login, loginedIn } = useUser()
+// 抽离了useUser的代码
+const { loginForm, user, logout, login, loginedIn } = useUser()
 </script>
 
 <style scoped lang="scss">
