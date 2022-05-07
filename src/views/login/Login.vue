@@ -1,5 +1,18 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useUser } from '@/compositions/useUser'
+import { UserStatus } from '@/views/login/LoginModel'
+
+// 抽离了useUser的代码
+const { loginForm, user, logout, login, userStatus, userInit } = useUser()
+
+onMounted(() => {
+  userInit()
+})
+</script>
+
 <template>
-  <div class="form-cont login-cont" v-if="!loginedIn">
+  <div class="form-cont login-cont" v-if="userStatus === UserStatus.OFFLINE">
     <div class="form-item">
       <label>用户名</label>
       <input type="text" v-model="loginForm.username" placeholder="请输入用户名" />
@@ -12,18 +25,11 @@
       <a class="login-btn margin-left-18" @click.prevent="login">登录</a>
     </div>
   </div>
-  <div class="logout-cont" v-else>
+  <div class="logout-cont" v-if="userStatus === UserStatus.ONLINE">
     Wecome {{ user?.name }},
     <a class="logout-btn" @click.prevent="logout">Logout</a>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useUser } from '@/compositions/useUser'
-
-// 抽离了useUser的代码
-const { loginForm, user, logout, login, loginedIn } = useUser()
-</script>
 
 <style scoped lang="scss">
 .form-cont {

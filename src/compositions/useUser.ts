@@ -1,31 +1,53 @@
 import { computed, reactive, ref } from 'vue'
-import { loginModel, useUserProps } from '@/views/login/loginInterface'
+import { LoginForm, UseUserProps, UserInfo, UserStatus } from '@/views/login/LoginModel'
 
-export const useUser = ():useUserProps => {
-  const loginForm:loginModel = reactive({
+const user = ref<UserInfo>()
+
+export const useUser = (): UseUserProps => {
+  const userInit = () => {
+    if (user.value?.status === UserStatus.REGISTER) {
+      user.value = { status: UserStatus.OFFLINE }
+    }
+  }
+
+  const loginForm = reactive<LoginForm>({
     username: '',
     password: ''
   })
-
-  const user = ref()
-
   const login = async() => {
-    user.value = { id: 1, name: loginForm.username }
+    user.value = { id: 1, name: loginForm.username, status: UserStatus.ONLINE }
     console.log('登录成功')
   }
-
-  const loginedIn = computed(():boolean => user.value?.id)
-
   const logout = async() => {
-    user.value = null
+    user.value = { status: UserStatus.OFFLINE }
     console.log('登出成功')
   }
 
+  const registerForm = reactive<LoginForm>({
+    username: '',
+    password: ''
+  })
+  const register = async() => {
+    user.value = { status: UserStatus.REGISTER }
+    console.log('注册成功')
+  }
+
+  const userStatus = computed(() => {
+    if (user.value?.status) {
+      return user.value.status
+    }
+    return UserStatus.OFFLINE
+  })
+
   return {
+    userInit,
     loginForm,
     user,
     login,
-    loginedIn,
-    logout
+    userStatus,
+    logout,
+
+    registerForm,
+    register
   }
 }
